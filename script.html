@@ -1,0 +1,88 @@
+const API_KEY =  "f7461e8ad6f8e4901953590f";
+
+
+const dropdown = document.querySelectorAll(".dropdown");
+const button = document.querySelector("#exchange-button");
+const input = document.querySelector("input");
+const from_select = document.querySelector(".f");
+const to_select = document.querySelector(".t");
+const result = document.querySelector("#result");
+const exchange_rate = document.querySelector("#exchange");
+const time_up = document.querySelector("#time");
+const exchange_btn = document.querySelector("#exchange-icon");
+const copy_btn = document.querySelector("#copy");
+
+const base_url = "https://v6.exchangerate-api.com/v6/f7461e8ad6f8e4901953590f/latest/";
+
+
+
+for(let option of dropdown){
+  for(let currcode in countryList){
+    let newoption = document.createElement("option");
+    newoption.innerText = currencyNames[currcode];
+    newoption.value = currcode;
+    if(option.name === "from" && currcode === "USD" ){
+      newoption.selected = "selected";
+    }
+    if(option.name === "to" && currcode === "INR" ){
+      newoption.selected = "selected";
+    }
+    option.append(newoption);
+  }
+  option.addEventListener("change",(event)=>{
+     flagupdate(event.target);
+  })
+  
+  }
+  
+  const flagupdate = (event)=>{
+    let currcode  = event.value;
+    let country = countryList[currcode];
+    let new_img = `https://flagsapi.com/${country}/flat/64.png`;
+    let img = event.parentElement.querySelector('img'); 
+    img.src = new_img;
+  }
+  
+  button.addEventListener("click", async (event) =>{
+    event.preventDefault();
+    let amount = input.value;
+    if(amount === " " || amount < 1 ){
+      amount = 1;
+      input.value = 1;
+    }
+    let from = from_select.value;
+    let to = to_select.value;
+    console.log(from);
+    let rate;
+    let data;
+    const response = await fetch(`${base_url}${from}`);
+    data = await response.json();
+    rate =await data.conversion_rates[to];
+    let time= await data.time_last_update_utc;
+    time = time.slice(0,16);
+    let ans = rate*amount;
+    result.innerText = ans;
+    exchange_rate.innerText = rate;
+    time_up.innerText = time;
+  
+  })
+  
+  exchange_btn.addEventListener("click",(evt)=>{
+    let temp = from_select.value;
+    from_select.value = to_select.value;
+    to_select.value = temp;
+    flagupdate(from_select);
+    flagupdate(to_select);
+  })
+  
+  copy_btn.addEventListener("click", async (evt) =>{
+    let text = result.innerText;
+    
+    navigator.clipboard.writeText(text)
+        .then(() => {
+            text.innerText = 'Copied!';
+            setTimeout(() => {
+                text.innerText = 'Copy Paragraph';
+            }, 2000);
+        });
+  })

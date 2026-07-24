@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO -->
+  <title>Free Currency Converter | Live Exchange Rates & Currency Calculator</title>
+
+  <meta name="description"
+    content="Convert 160+ world currencies instantly with live exchange rates. Free online currency converter with country flags, real-time exchange rates, and fast, accurate conversions.">
+
+  <meta name="keywords"
+    content="currency converter, exchange rate, currency calculator, live exchange rates, USD to INR, EUR to USD, INR to USD, forex converter, money converter">
+
+  <meta name="author" content="Lucky Kumar">
+  <meta name="robots" content="index, follow">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#080D1F">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Free Currency Converter">
+  <meta property="og:description"
+    content="Convert over 160 currencies with live exchange rates and country flags.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="favicon.png">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Free Currency Converter">
+  <meta name="twitter:description"
+    content="Convert currencies instantly using live exchange rates.">
+  <meta name="twitter:image" content="favicon.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://YOUR_USERNAME.github.io/YOUR_REPOSITORY/">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.png" type="image/png">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+    integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">
+</head>
+
+<body>
+
+  <div id="main_container">
+
+    <h1>Currency Converter</h1>
+
+    <p id="amount">Amount</p>
+
+    <input
+      type="number"
+      id="username"
+      name="username"
+      placeholder="0"
+    >
+
+    <div id="box">
+      <p id="from">From</p>
+      <p id="to">To</p>
+    </div>
+
+    <div class="box1">
+
+      <div class="card">
+        <img
+          src="https://flagsapi.com/US/flat/64.png"
+          alt="US Flag"
+        >
+
+        <select class="dropdown f" name ="from" >
+          
+        </select>
+      </div>
+
+      <button type="button" id="exchange-icon">
+        <i
+          class="fa-solid fa-arrow-right-arrow-left fa-2xl"
+          style="color: #3E6BFF;"
+        ></i>
+      </button>
+
+      <div class="card">
+        <img
+          src="https://flagsapi.com/IN/flat/64.png"
+          alt="India Flag"
+        >
+
+        <select class="dropdown t" name = "to" >
+        </select>
+      </div>
+
+    </div>
+
+    <button type="button" id="exchange-button">
+      Convert
+    </button>
+
+    <div id="result_box">
+
+      <div id="con">
+        <span>
+          <p id="result_label">Result</p>
+        </span>
+
+        <button type="button" id="copy">
+          <i
+            class="fa-regular fa-copy fa-2xl"
+            style="color: rgb(44, 106, 221);"
+          ></i>
+        </button>
+      </div>
+
+      <p id="result">00000</p>
+
+      <hr>
+      <div id ="boxc">
+      <p id="exchange-label">Exchange rate:</p>
+      <p id= "update">last updated:</p>
+      </div>
+      <div id = "boxd">
+      <p id="exchange">0000</p>
+      <p id="time">000</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="footer">
+    <p>Made by Lucky Kumar</p>
+    <p>Made with ❤️</p>
+  </div>
+  <script src="List.js"></script>
+  <script src="script.js"></script>
+  
+</body>
+
+</html>
