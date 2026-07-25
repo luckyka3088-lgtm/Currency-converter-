@@ -270,5 +270,9 @@ hr {
   #exchange-label,#update{
     font-size:1rem;
     margin-bottom:0rem;
+    padding-bottom:0rem;
+  }
+  #exchange-label{
+   align-self:flex-start;
   }
 }
