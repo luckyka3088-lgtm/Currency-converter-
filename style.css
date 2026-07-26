@@ -149,10 +149,7 @@ hr {
   width: 100%;
 }
 
-#exchange{
-  font-size: 3rem;
-}
-#time{
+#exchange,#time{
   font-size: 3rem;
 }
 #exchange-label,#update{
