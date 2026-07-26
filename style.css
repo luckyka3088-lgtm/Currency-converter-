@@ -262,10 +262,12 @@ hr {
     width:40%;
   }
   #boxc,#boxd{
-    padding:2rem;
+    padding:1rem;
   }
   #exchange,#time{
     font-size: 1rem;
+    margin-top:0rem;
+    padding-top:0rem;
   }
   #exchange-label,#update{
     font-size:1rem;
